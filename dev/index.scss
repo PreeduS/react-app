@@ -1,0 +1,22 @@
+$screenWidth : 750px;
+
+body{
+    margin:0px 30px;
+    padding:0px;
+    box-sizing: border-box;
+   
+    background:url('./public/BG_Desktop.png');
+    @media screen and (max-width: $screenWidth) {
+        &{
+            background:url('./public/BG_Mobile.png');
+        }
+    }
+
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size:cover;
+
+    color:black;
+   
+}

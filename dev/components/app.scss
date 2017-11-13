@@ -1,0 +1,59 @@
+@import '../commons';
+
+
+#app{
+    
+
+    .initial-loading {
+        position:relative;
+        height:100%;
+        width:100%;
+        span{
+            display:block;
+            @include center-top-bottom() ;
+            width:100%;
+            height:100px;
+            color:white;
+            font-size:30pt;
+            text-align:center;
+        }
+    }
+    //max-width:1152px;
+    max-width:688px;
+    margin:0px auto;
+
+    .main-logo{
+
+        height:80px;
+        position:relative;
+        .answer-img{
+            position:absolute;
+            @include center-left-right();
+            position:relative;
+            display:block;
+            width:194px;
+            height:70px;
+
+            span{
+                position:relative;
+                left:10px;
+                width:100%;
+                height:100%;
+                display:block;
+                background:url('../public/Toluna-Logo.png');
+
+                background-repeat: no-repeat;
+           
+                background-position: center;
+                background-size:194px 70px;     
+   
+                
+
+
+            }
+        }
+    }
+
+    
+
+}

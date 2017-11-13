@@ -1,0 +1,355 @@
+@import '../../commons';
+
+$screenWidth : 750px;
+
+
+#answer-component{
+
+    #answer-list-wrapper{
+        font-family: Arial;
+        .no-items {
+            position:relative;
+            height:50px;
+            span{
+                display:block;
+                @include center-top-bottom() ;
+                width:100%;
+                height:40px;
+                color:white;
+                font-size:22pt;
+                text-align:center;
+            }
+        }
+        
+        .answer-list-container{
+            @media screen and (max-width: $screenWidth) {
+                &:hover{
+                    background:rgba(200,200,200,0.1);
+                }
+            }
+            //color:#6cdafb;
+            color:white;
+            height:160px;
+            position:relative;
+            border-top:1px solid rgba(180,180,180,.7);
+            &:nth-last-of-type(2){
+                border-bottom:1px solid rgba(180,180,180,.3);  
+            }
+           
+           
+            padding:10px 0px;
+
+            .answer-list-left{
+                position:absolute;
+                display: inline-block;
+                width:65%;
+                left:0px;
+                height:160px;
+                border-right:1px solid #6cdafb;
+                @media screen and (max-width: $screenWidth) {
+                    border-right:0px solid #6cdafb;
+                }
+          
+               
+
+                .answer-item{
+                    //@include center();                
+                    @include center-top-bottom();                             
+                    left:25%;
+                    right:0px;              
+                    height:93px;                  
+                    font-size:20pt;
+                    @media screen and (max-width: $screenWidth) {
+                        &{
+                             font-size:55pt;
+                             left:0%;
+                              height:119px;  
+                        }
+                    } 
+
+                    .answer-img{
+                        display:inline-block;
+                        width:93px;
+                        height:100%;
+                        @media screen and (max-width: $screenWidth) {
+                            &{
+                                width:119px;
+                            }
+                        }
+                       
+                        span{
+                            display: block;
+                            width:100%;
+                            height:100%;                           
+                            background-repeat: no-repeat;                          
+                            background-position: center;
+                            background-size:cover;                                               
+                            border-radius: 120px;                                   
+                        }
+     
+                    }
+                    .answer-text{
+                        display:inline-block;                
+                        left:120px;
+                         @media screen and (max-width: $screenWidth) {
+                             &{
+                                 left:140px;
+                             }
+                         }
+                        right:10px;
+                        @include center-top-bottom();   
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                       
+
+                    }
+                   
+                }
+
+            }
+            .answer-list-right{
+                position:absolute;              
+                display: inline-block;
+                width:35%;
+                left:65%;
+                height:160px;
+
+          
+         
+            }
+        
+
+        }/* .answer-list-container*/
+ 
+
+      
+
+    }/*#answer-list-wrapper */
+
+    .add-answer{       
+        position:relative;
+        margin-top:30px;
+        height:100px;
+         @media screen and (max-width: $screenWidth) {
+             &{
+                  height:170px;
+             }
+         }
+    }      
+    
+    .btn-yellow{
+        @include center(); 
+        color:#d6db4b;
+        border:1pt solid #d6db4b;
+        border-radius: 64px;
+        width:64px;
+        height:64px;
+         @media screen and (max-width: $screenWidth) {
+             &{
+                width:126px;
+                height:126px;     
+                border-radius: 126px;    
+                
+             }
+         }
+
+        text-align:center;
+        position:relative;
+        cursor:pointer;
+        >:first-child{         
+            display:block;
+            position:absolute;
+            border-bottom:1pt solid#d6db4b;
+            // margin-top:-1pt;
+            left:33%;
+            right:33%;
+            top:50%;
+            bottom:50%;
+        
+        } 
+
+    }   
+    .btn-yellow-active{
+        @extend .btn-yellow;
+
+        .plus{         
+        display:block;
+        position:absolute;
+        border-left:1pt solid#d6db4b;
+        //margin-left:-1px;
+        top:33%;
+        bottom:33%;
+        left:50%;
+        right:50%;
+    
+        }            
+    }
+
+    .footer{
+        //margin-top:55px;
+        margin-bottom:10px;
+    }
+    .upload-container{
+        margin-top:40px;
+        margin-bottom:30px;
+        width:100%;
+        height:50px;
+        border:1px solid rgba(180,180,180,.7);
+        position:relative;
+
+        //@media screen and (min-width: $screenWidth) {
+        
+            .file-input,.text-input,.save-button{
+                position:absolute;
+                top:0px;
+                height:50px;
+                
+            }
+
+            .file-input{
+                width:50%;
+                left:0px;
+                top:0px;
+                position:relative;
+
+                .input-button-container{
+                    @include center-top-bottom();
+                    left:10%;
+                    color:white;
+                    width:150px;
+                    height:60%;   
+                    font-size:14pt;
+                    font-family: Arial;          
+                    
+                    span{
+                        @include center-top-bottom();
+                        left:160px;
+                        width:140px;
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        font-size:12pt;
+                    }
+                }
+                input{
+                    position:absolute;
+                    left:0px;
+                    top:0px;
+                    width:100%;
+                    height:100%;
+             
+
+                    //overflow:hidden;
+                    opacity: 0;
+
+                }
+                label{
+                    position:absolute;
+                    left:0px;
+                    top:0px;
+                    width:100%;
+                    height:100%;
+                    color:black;
+                    border:1px solid rgba(180,180,180,.7);
+                    text-align:center;
+                    line-height: 28px;
+                    background: white;
+                    font-size:14pt;
+                    font-family: Arial;      
+                    position:absolute; 
+                    z-index: 9;       
+                    cursor: pointer;      
+                }
+            }
+            .text-input{
+                left:50%;
+                left: calc(50% - 1px);
+                right:140px;
+                position:absolute;
+                border-left:1px solid rgba(180,180,180,.7);
+                          
+                input{
+                    color:white;
+                    padding-left:20%;
+                    width:100%;
+                    height:100%;
+                    background:transparent;
+                    border:none;
+                    outline:none;   
+                    font-size:14pt;
+                    font-family: Arial;
+                    &::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+                        color:rgb(240,240,240);
+                    }
+                    &::-moz-placeholder { /* Firefox 19+ */
+                        color:rgb(240,240,240);
+                    }
+                    &:-ms-input-placeholder { /* IE 10+ */
+                        color:rgb(240,240,240);
+                    }
+                    &:-moz-placeholder { /* Firefox 18- */
+                        color:rgb(240,240,240);
+                    }                    
+                    
+
+                }
+            }
+            .save-button{
+                right:0px;
+                width:140px;
+                background: #6cdafb;
+                font-size:14pt;
+                font-family: Arial;
+                cursor:pointer;
+                text-align:center;
+                line-height: 50px;
+            }
+
+        //}
+
+
+
+    }
+        @media screen and (max-width: $screenWidth) {
+        .upload-container{
+            height:120px;
+            
+            .save-button{
+                width:100%;
+                left:0px;
+                top:70px;
+               
+                 font-size: 24pt;
+            }
+            .text-input{
+                right:0px;
+                height:70px;
+                input{
+                    font-size: 24pt;
+                }
+            }
+            .file-input{
+                height:70px;
+                label{
+                    line-height: 43px;
+                     font-size: 20pt;
+                }
+                
+            }
+            .file-input .input-button-container span{
+                 width:0px;
+                 display: none;
+                 
+            }
+            .file-input .input-button-container{
+                width:80%;
+                  
+            }           
+        }
+
+   
+    }   
+
+
+}
